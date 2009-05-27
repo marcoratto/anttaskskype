@@ -3,7 +3,7 @@
 
 =Download=
 
-  # Open the browser on your desktop and go to the [http://code.google.com/p/anttaskmqseries/downloads/list Downloads] area
+  # Open the browser on your desktop and go to the [http://code.google.com/p/anttaskskype/downloads/list Downloads] area
   # Download the binary archive (.zip for Windows, .tar.gz for `*`nix or Mac]
 
 =Install=
