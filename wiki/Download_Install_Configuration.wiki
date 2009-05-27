@@ -1,0 +1,65 @@
+#summary Download and Install
+#labels Featured,Phase-Deploy
+
+=Download=
+
+  # Open the browser on your desktop and go to the [http://code.google.com/p/anttaskmqseries/downloads/list Downloads] area
+  # Download the binary archive (.zip for Windows, .tar.gz for `*`nix or Mac]
+
+=Install=
+
+  # Extract the .zip file (or .tar.gz file) on your desktop  
+
+=Configuration=
+
+  # Configure your _build.xml_
+
+Define a classpath (`AntTaskMqSeries.jar` and MQ libraries dependencies):
+{{{
+	<path id="AntTaskMqSeries.classpath">
+		<fileset dir="./lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+}}}
+
+Define the task `AntTaskMqSeries:`
+{{{
+	<taskdef name="AntTaskMqSeries" classname="uk.co.marcoratto.ant.MqSeries" classpathref="AntTaskMqSeries.classpath" />
+}}}
+
+Use the task:
+{{{
+	<target name="clear1">
+	 	<AntTaskMqSeries host="${mq_server}" port="${mq_port}" channel="${mq_channel}" queue="${mq_queue_input}" action="clear"/>
+	</target>		
+
+	<target name="write1">
+	 	<AntTaskMqSeries host="${mq_server}" port="${mq_port}" channel="${mq_channel}" queue="${mq_queue_input}" inputFile="./dummyUTF-8.txt" action="write"/>
+	</target>
+	
+	<target name="write2">
+	 	<AntTaskMqSeries host="${mq_server}" port="${mq_port}" channel="${mq_channel}" queue="${mq_queue_input}" action="write">
+			<fileset dir=".">
+				<include name="**/dummy*.txt" />
+				<exclude name="**/dummy.txt" />				
+			</fileset>
+		</AntTaskMqSeries>			
+	</target>
+	
+	<target name="write3">
+	 	<AntTaskMqSeries host="${mq_server}" port="${mq_port}" channel="${mq_channel}" queue="${mq_queue_input}" listFile="./lists.txt" action="write" skipZeroLength="true" />
+	</target>
+	
+	<target name="writeUTF-8">
+	 	<AntTaskMqSeries host="${mq_server}" port="${mq_port}" channel="${mq_channel}" queue="${mq_queue_input}" text="Hello World!" action="write"/>
+	</target>
+	
+	<target name="browse1">
+	 	<AntTaskMqSeries host="${mq_server}" port="${mq_port}" channel="${mq_channel}" queue="${mq_queue_browse}" outputFileName="./browse1_" outputFileExt=".txt" match="World" action="browse" override="true"/>
+	</target>	
+	
+	<target name="read1">
+	 	<AntTaskMqSeries host="${mq_server}" port="${mq_port}" channel="${mq_channel}" queue="${mq_queue_output}" outputFileName="./read1_" outputFileExt=".txt" action="read" override="true"/>
+	</target>
+}}}
