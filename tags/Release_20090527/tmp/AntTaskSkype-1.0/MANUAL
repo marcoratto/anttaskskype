@@ -1,0 +1,23 @@
+AntTaskSkype - MANUAL
+=====================
+
+***********************
+* Introduction 		 
+*********************** 
+
+Send a message using Skype API inside a Apache Ant Task. Current features are:
+
+    * Send a message to one nickname
+    * Send a message to a list of nicknames separated by a char (comma, pipe, etc.) 
+
+*********************** 
+* Licence 			    
+***********************
+
+This program is a free software; 
+You can redistribute or modify it according to the terms of the 
+Generic Public Licence GNU as is published by the 
+Free Foundation Software or version 2 of the licence 
+or (to own chosen) other next version.
+
+http://www.gnu.org/licenses/gpl.txt 
