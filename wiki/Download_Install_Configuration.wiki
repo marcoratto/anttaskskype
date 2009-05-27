@@ -1,4 +1,4 @@
-#summary Download and Install
+#summary Download Install & Configure
 #labels Featured,Phase-Deploy
 
 =Download=
