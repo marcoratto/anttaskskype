@@ -13,6 +13,10 @@ For developing you need the following tools installed before:
 
 * Code Coverage: [http://update.eclemma.org Emma for Eclipse]
 
+* VOIP: [http://www.skype.com/intl/it/download/skype/windows/ Skype]
+
+* Skype SDK: [https://developer.skype.com/wiki/Java_API Java API]
+
 =Check Out=
 
   # Check out the project from Subversion Repository: https://anttaskskype.googlecode.com/svn/trunk/
