@@ -1,12 +1,16 @@
 #summary Configuration For Developer
+#labels Featured,Phase-Implementation
 
 =Prerequisities=
 
 For developing you need the following tools installed before:
 
 * IDE: [http://www.eclipse.org/downloads/packages/ Eclipse Ganymede 3.4.2]
+
 * Automation: [http://ant.apache.org/bindownload.cgi Apache Ant 1.7.1]
+
 * Versioning: [http://subclipse.tigris.org/update_1.6.x SVNKit 1.6 for Eclipse]
+
 * Code Coverage: [http://update.eclemma.org Emma for Eclipse]
 
 =Check Out=
@@ -16,4 +20,3 @@ For developing you need the following tools installed before:
 =Eclipse Configuration=
 
  # Define a variable "ANT_HOME" with "d:\\Programmi\\apache-ant-1.7.1" (or your different path).
-
