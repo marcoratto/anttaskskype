@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project basedir="../..">
+	<property environment="myenv" />
+	<property name="project_version" value="1.0" />
+	<property name="project_name" value="${ant.project.name}" />
+	<property name="project_home" location="${basedir}" />
+	<property name="project_lib" location="${project_home}/lib" />
+	<property name="java.library.path" value="${project_home}/skype"/>
+	
+	<path id="AntTaskSkype.classpath">
+		<fileset dir="${project_lib}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<taskdef name="skypeSendMessage" classname="uk.co.marcoratto.ant.skype.SendMessage" classpathref="AntTaskSkype.classpath" />	
+
+	<target name="main">	
+		<antcall target="testSendMessage" />
+	</target>
+
+	<target name="testParameterMessageNull">
+		<skypeSendMessage debug="true" listofnicknames="Alice" failonerror="true" />
+	</target>
+	
+	<target name="testParameterListOfNickNamesNull">
+		<skypeSendMessage debug="true" message="Hello World!" failonerror="true" />
+	</target>	
+	
+	<target name="testFailOnErrorTrue">
+		<skypeSendMessage debug="true" message="Hello World!" listofnicknames="testFailOnErrorTrue" failonerror="true" />
+	</target>
+	
+	<target name="testHelloWorld">
+		<skypeSendMessage debug="true" listofnicknames="vittvitt61" message="Hello World!" failonerror="true" />
+	</target>	
+</project>
